@@ -106,6 +106,8 @@ function read_gpus() {
 		declare name=$(echo $line | grep -o -e "[^:]*$")
 		declare bus=$(echo $line | grep -o -e "^[^ ]*")
 
+		bus=${bus:5}
+
 		# The bus IDs in hex
 		declare bus1h=${bus:0:2}
 		declare bus2h=${bus:3:2}
